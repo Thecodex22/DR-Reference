@@ -1,0 +1,79 @@
+#welcome_background{
+	width:100%;
+	background-color: #3F4C6B;
+	color:#FFFFFF;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:20pt;
+
+	border:1px solid black;
+	margin:0px;
+	margin-bottom:-1px;
+}
+#welcome_header{
+	text-align:center;
+	margin:0px;
+}
+#paragraph{
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	text-align:justify;
+	padding-right:40px;
+}
+#table_container{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+	border:1px solid black;
+}
+#para_header{
+	color:#36393D;
+	font-size:16pt;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+form label{
+	font-weight:bold;
+	color:#36393D;
+	font-size:14pt;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+form input{
+	border:1px solid black;
+	background-color: #8CD9C5;
+	padding-top:2px;
+	padding-bottom:2px;
+}
+#submit_button{
+	background-color: #36393D;
+	color:white;
+	font-size:14pt;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+#link_holder{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+
+}
+#link_holder tr td{
+	text-align:center;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:16pt;
+	font-weight:bold;
+
+	border-collapse:collapse;
+
+	background-color: #36393D;
+	color:white;
+}
+a:link{
+	text-decoration:none;
+	color:white;
+}
+a:visited{
+	text-decoration:none;
+	color:white;
+}
+#nations-select, #professions-select, #spells-select{
+	cursor:pointer;
+}
+
+

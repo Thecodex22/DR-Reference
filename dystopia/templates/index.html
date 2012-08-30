@@ -1,0 +1,109 @@
+{% load NameCleaner %}
+<html>
+<head>
+	<title>Dystopia Rising Character Creator</title>
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/index_style.css" />
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/list_style.css" />
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/professions_style.css" />
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/nation_style.css" />
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/index.js"></script>
+</head>
+<body>
+	<div id="welcome_background">
+		<h1 id="welcome_header">Dystopia Rising Reference</h1>
+	</div>
+	<!--
+	<table id="table_container">
+		<tr><th id="para_header">Formation Proclamation!</th><td></td></td>
+		<tr>
+			<td id="paragraph">
+				Why did I make this you might ask? I hate the pdf, I hate scrolling though it. I thought it was a pain in the
+				ass so then the, "Dystopia Rising Reference" site was born! The best part about this site is that its powered by Django and
+				SQL so I can make really quick changes to any of the Nations, Profession and Spells. If anything is innacurate please let me know at my <a href="mailto:thecodex22@gmail.com" style="color:red;">email</a>.
+			</td>
+			<td id="form">
+				<form method="post" action="/login/">
+					<table>
+						<tr>
+							<td>
+								<label>Username</label>
+							</td>
+						</tr>
+							<td>
+								<input type="text" name="username" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>Password</label>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="password" name="password" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="submit" value="Signin" id="submit_button" />
+							</td>
+						</tr>
+					</table>
+				</form>
+			</td>
+		</tr>
+	</table>
+-->
+	<!-- Holds buttons for nation/profession/spell list -->
+
+	<table id="link_holder">
+		<tr>
+			<td id="nations-select">Nations</td>
+			<td id="professions-select">Professions</td>
+			<td id="spells-select">Spells</td>
+		</tr>
+	</table>
+
+	{% include "nationapp.html" %}
+	{% include "professionapp.html" %}
+
+	{% if spells %}
+	<div id="spell-list" style="text-align:center;">
+		<div class="spells-holder">
+			<label>Search:</label>
+			<input type="text" id="spell-search" name="search" />
+		<table id="spells">
+			{% for spell in spells %}
+			<tr>
+				<td id="{{ spell.name|clipspace|cutapos }}-select">{{ spell.name }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+		</div>
+
+		<table id="spell-details-default">
+			<th>Spell Details List</th>
+			<tr>
+				<td>Here you will find the description for all the spells that you click on. You can scroll through the available
+					spells in the left-hand table and this view will automatically load up the details of that spell
+				</td>
+			</tr>
+		</table>
+
+		{% for spell in spells %}
+		<table id="{{ spell.name|clipspace|cutapos }}-details" class="spell-details">
+			<th>{{ spell.name }}</th>
+			<tr>
+				<td class="cost">Cost: {{ spell.cost }}</td>
+			</tr>
+
+			<tr>
+				<td>{{ spell.description }}</td>
+			</tr>
+		</table>
+	{% endfor %}
+	</div>
+	{% endif %}
+</body>
+</html>

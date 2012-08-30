@@ -1,0 +1,100 @@
+html
+{
+	padding-bottom:101%;
+}
+
+body
+{
+	background-color: #191919;
+}
+.refer
+{
+	color:white;
+	position: relative;
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.inner_left_refer
+{
+	width:200px;
+}
+.inner_right_refer
+{
+
+}
+#container_header
+{
+	position: relative;
+	top:50px;
+	left:9%;
+	width:150px;
+}
+.name_header
+{
+	color:#191919;
+	background-color: #C31919;
+	font-family:Arial;
+	font-size: 24pt;
+	padding: 0px 0px 20px 0px;
+}
+.chunk_header
+{
+	font-family:Verdana;
+	font-size:14pt;
+	color:white;
+	table-layout:fixed;
+	width:300px;
+	cursor: pointer;
+}
+.nation_header{background-color:#1919E1;}
+.profession_header{background-color:#199619;}
+.skill_header{background-color:#E16419;}
+#search_bar
+{
+	padding-top:20px;
+}
+#search_bar input
+{
+	color:white;
+	background-color: #0C0C0C;
+	border:1px solid white;
+}
+.item_list td
+{
+	color:white;
+	font-family:Verdana;
+	font-weight: bold;
+	font-size:13pt;
+	cursor:pointer;
+	border:1px solid #CFCFCF;
+}
+.nation_list
+{
+	background-color: #1919E1;
+}
+.profession_list
+{
+	background-color: #199619;
+}
+.spell_list
+{
+	background-color: #E16419;
+}
+.item_detail
+{
+	color:white;
+	font-family: Verdana;
+	border:1px solid white;
+	padding:10px;
+}
+.item_detail h3
+{
+	text-align: center;
+	padding-top:10px;
+	color:#E16419;
+}
+.item_detail br
+{
+	margin-bottom:10px;
+}

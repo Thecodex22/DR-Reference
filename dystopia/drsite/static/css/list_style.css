@@ -1,0 +1,67 @@
+#spell-list{
+	width:800px;
+	display: none;
+	margin-right:auto;
+	margin-left:auto;
+}
+.spells-holder{
+	width:30%;
+	display:inline-table;
+	overflow:auto;
+}
+#spells{
+	margin-top:5px;
+	width:100%;
+	display: inline-table;
+	border:1px solid black;
+}
+#spells tr td{
+	font-family:Tahoma, Geneva, sans-serif;
+	color:#FFF;
+	background-color:#3D3F5E;
+	font-size:14pt;
+	padding-left:5px;
+	cursor:pointer;
+
+	margin:0px;
+}
+#spell-details-default{
+	width:69%;
+	display:none;
+	border:1px solid black;
+	padding-left:10px;
+	padding-right:10px;
+	margin-top:2px;
+}
+#spells-details-default tr td{
+	font-family:Tahoma, Geneva, sans-serif;
+	text-align:justify;
+	font-size:14pt;
+	color:#36393D;
+}
+.spell-details{
+	width:69%;
+	display:none;
+	border:1px solid black;
+
+	padding-left:10px;
+	padding-right:10px;
+}
+.spell-details tr{
+	margin-bottom:10px;
+}
+.spell-details th{
+	font-family:Tahoma, Geneva, sans-serif;
+	color:#36393D;
+	font-size:16pt;
+	font-weight:bold;
+}
+.spell-details tr td{
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	color:#36393D;
+	font-size:14pt;
+}
+.spell-details tr td.cost{
+	font-weight:bold;
+	color:#75231B;
+}

@@ -1,0 +1,64 @@
+{% load NameCleaner %}
+{% if nations %}
+	<div id="nation-list" style="text-align:center;">
+		<div class="nation-holder">
+
+			<label>Search:</label>
+			<input type="text" id="nation-search" name="search" />
+
+		<table id="nation">
+			{% for nation in nations %}
+			<tr>
+				<td id="{{ nation.name|clipspace|cutapos }}-select">{{ nation.name }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+
+		</div>
+
+		<table id="nation-details-default">
+			<th>List of Nations</th>
+			<tr>
+				<td>
+					In this section you can find all information pertaining to nations.
+				</td>
+			</tr>
+		</table>
+
+
+		{% for nation in nations %}
+		<table id="{{ nation.name|clipspace|cutapos }}-details" class="nation-details">
+			<tr>
+				<td></td>
+				<th>{{ nation.name }}</th>
+			</tr>
+			<tr>
+				<td>
+					{% for nick in nation.nick_names.objects.all %}
+						{{ nick }}
+						{% if forloop.first %}
+							({{ nick }},
+						{% else %}{% if forloop.last %}
+							{{ nick }})
+						{% else %}
+							{{ nick }},
+						{% endif %}{% endif %}
+
+					{% endfor %}
+				</td>
+			</tr>
+			<tr>
+				<td align="center">Health:{{ nation.health }}</td><td align="center"> Mind:{{ nation.mind }}</td><td align="center"> Infection:{{nation.infection}}</td>
+			</tr>
+			<tr>
+				<td></td>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td colspan="3">{{ nation.description|safe }}</td>
+			</tr>
+		</table>
+		{% endfor %}
+		
+	</div>
+{% endif %}

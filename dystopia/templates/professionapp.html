@@ -1,0 +1,58 @@
+{% load NameCleaner %}
+{% if professions %}
+	<div id="prof-list" style="text-align:center;">
+		<div class="prof-holder">
+
+			<label>Search:</label>
+			<input type="text" id="prof-search" name="search" />
+
+		<table id="profs">
+			{% for prof in professions %}
+			<tr>
+				<td id="{{ prof.name|clipspace|cutapos }}-select">{{ prof.name }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+
+		</div>
+
+		<table id="prof-details-default">
+			<th>Professions List</th>
+			<tr>
+				<td>
+					In this part you will find descriptions both roleplay and profession biographies for a profession of your choosing.
+				</td>
+			</tr>
+		</table>
+
+
+		{% for prof in professions %}
+		<table id="{{ prof.name|clipspace|cutapos }}-details" class="prof-details">
+			<th>{{ prof.name }}</th>
+			<tr><th>Spells</th></tr>
+			<tr>
+			<td>
+				<ul>
+					{% for spell in prof.spells.all %}
+					<li>{{ spell.name }}</li>
+					{% endfor %}
+				</ul>
+			</td>
+			</tr>
+			<tr>
+				<th>Profession Bio</th>
+			</tr>
+			<tr>
+				<td>{{ prof.prof_bio }}</td>
+			</tr>
+			<tr>
+				<th>Roleplay Bio</th>
+			</tr>
+			<tr>
+				<td>{{ prof.roleplay_bio }}</td>
+			</tr>
+		</table>
+		{% endfor %}
+		
+	</div>
+{% endif %}
